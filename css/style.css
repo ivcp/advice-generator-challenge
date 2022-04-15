@@ -1,0 +1,126 @@
+:root {
+  --color-primary-light: hsl(193, 38%, 86%);
+  --color-primary-dark: hsl(150, 100%, 66%);
+
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 52%;
+  }
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--dark-blue);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.advice {
+  background-color: var(--dark-grayish-blue);
+  width: 55rem;
+  padding: 4rem 4rem 0 4rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .advice {
+    max-width: 90%;
+  }
+}
+.advice__id {
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-primary-dark);
+  font-size: 1.2rem;
+  letter-spacing: 0.4rem;
+}
+
+.advice__text {
+  color: var(--color-primary-light);
+  font-weight: 800;
+  font-size: 2.8rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.advice__divider-desktop {
+  height: 1.6rem;
+  width: 44.4rem;
+}
+
+.advice__divider-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .advice__divider-desktop {
+    display: none;
+  }
+  .advice__divider-mobile {
+    display: block;
+    height: 1.9rem;
+    width: 35.4rem;
+  }
+}
+
+.advice__btn {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-primary-dark);
+  transform: translateY(50%);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+@media (max-width: 600px) {
+  .advice__btn {
+    height: 7.2rem;
+    width: 7.2rem;
+  }
+}
+
+.advice__btn:hover {
+  box-shadow: 0 0 3rem 0.2rem var(--color-primary-dark);
+}
+
+.advice__btn:active {
+  transform: translateY(54%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 2rem;
+  color: var(--color-primary-light);
+}
+.attribution a {
+  color: var(--color-primary-dark);
+}
