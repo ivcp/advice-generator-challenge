@@ -6,22 +6,22 @@ const btn = document.querySelector('.advice__btn');
 
 class App {
   constructor() {
-    this.#fetchAdvice();
-    btn.addEventListener('click', this.#fetchAdvice.bind(this));
+    this.fetchAdvice();
+    btn.addEventListener('click', this.fetchAdvice.bind(this));
   }
 
-  async #fetchAdvice() {
+  async fetchAdvice() {
     try {
-      const data = await fetch(URL);
+      const data = await fetch(URL, { cache: 'no-cache' });
       if (!data.ok) throw new Error('Failed to get advice ⚠');
       const advice = await data.json();
-      this.#displayAdvice(advice);
+      this.displayAdvice(advice);
     } catch (err) {
       console.error(err);
     }
   }
 
-  #displayAdvice({ slip: { id, advice } }) {
+  displayAdvice({ slip: { id, advice } }) {
     adviceEl.innerHTML = '';
     const html = `
     <h4 class="advice__id">Advice #${id}</h4>
